@@ -1,0 +1,95 @@
+{
+    "name": "blob",
+    "scopeName": "source.blob",
+    "fileTypes": ["asset", "blob", "font", "gfxlib", "ui"],
+    "patterns": [
+        { "include": "#all" }
+    ],
+    "repository": {
+        "all": {
+            "patterns": [
+                { "include": "#quote" },
+                { "include": "#option" },
+                { "include": "#function" },
+                { "include": "#expression" },
+                { "include": "#atom" },
+                { "include": "#string" },
+                { "include": "#number" },
+                { "include": "#bool" },
+                { "include": "#input" },
+                { "include": "#state" },
+                { "include": "#enum" },
+                { "include": "#comment" }
+            ]
+        },
+        "expression": {
+            "name": "meta.none.expression.blob",
+            "begin": "\\(",
+            "end": "\\)",
+            "patterns": [
+                { "include": "#all" }
+            ]
+        },
+        "function": {
+            "name": "meta.entity.name.function.$1.blob",
+            "begin": "\\([[:space:]]*?([^.#:\"()@\\d[:space:]][^\"()[:space:]]*?(?!:))(?=[[:space:]\\)])",
+            "end": "\\)",
+            "patterns": [
+                { "include": "#all" }
+            ]
+        },
+        "option": {
+            "name": "meta.entity.name.type.object.option.$1.blob",
+            "begin": "\\([[:space:]]*?([^\"()[:space:]]*?:)(?=[[:space:]\\)])",
+            "end": "\\)",
+            "patterns": [
+                { "include": "#all" }
+            ]
+        },
+        "quote": {
+            "name": "meta.keyword.control.function.quote.blob",
+            "begin": "\\([[:space:]]*?(quote*)(?=[[:space:]\\)])",
+            "end": "\\)",
+            "patterns": [
+                { "include": "#all" }
+            ]
+        },
+        "atom": {
+            "name": "constant.other.symbol.atom.blob",
+            "begin": ":.*?",
+            "end": "(?=[[:space:]\\(\\)])"
+        },
+        "string": {
+            "name": "string.quoted.double.blob",
+            "begin": "\".*?",
+            "end": "\""
+        },
+        "number": {
+            "name": "constant.numeric.decimal.blob",
+            "match": "[+-]?\\d+\\.?\\d*?(?=[[:space:]\\(\\)])"
+        },
+        "bool": {
+            "name": "constant.numeric.boolean.blob",
+            "match": "#(f|t)"
+        },
+        "input": {
+            "name": "entity.name.tag.input.$1.blob",
+            "begin": "@.*?",
+            "end": "(?=[[:space:]\\(\\)])"
+        },
+        "state": {
+            "name": "variable.state.$1.blob",
+            "begin": "\\..*?",
+            "end": "(?=[[:space:]\\(\\)])"
+        },
+        "enum": {
+            "name": "constant.variable.enum.$1.blob",
+            "begin": "&.*?",
+            "end": "(?=[[:space:]\\(\\)])"
+        },
+        "comment": {
+            "name": "comment.blob",
+            "match": ";.*$"
+        }
+    }
+}
