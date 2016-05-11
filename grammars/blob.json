@@ -10,6 +10,7 @@
             "patterns": [
                 { "include": "#quote" },
                 { "include": "#option" },
+                { "include": "#stateSetter" },
                 { "include": "#function" },
                 { "include": "#expression" },
                 { "include": "#atom" },
@@ -31,7 +32,7 @@
             ]
         },
         "function": {
-            "name": "meta.entity.name.function.$1.blob",
+            "name": "meta.entity.name.function.blob-function-$1.blob",
             "begin": "\\([[:space:]]*?([^.#:\"()@\\d[:space:]][^\"()[:space:]]*?(?!:))(?=[[:space:]\\)])",
             "end": "\\)",
             "patterns": [
@@ -39,25 +40,32 @@
             ]
         },
         "option": {
-            "name": "meta.entity.name.type.object.option.$1.blob",
-            "begin": "\\([[:space:]]*?([^\"()[:space:]]*?:)(?=[[:space:]\\)])",
+            "name": "meta.entity.name.type.object.option.blob-option-$1.blob",
+            "begin": "\\([[:space:]]*?([^\"()[:space:]]*?):(?=[[:space:]\\)])",
             "end": "\\)",
             "patterns": [
                 { "include": "#all" }
             ]
         },
         "quote": {
-            "name": "meta.keyword.control.function.quote.blob",
+            "name": "meta.keyword.control.function.blob-function-quote.blob",
             "begin": "\\([[:space:]]*?(quote*)(?=[[:space:]\\)])",
             "end": "\\)",
             "patterns": [
                 { "include": "#all" }
             ]
         },
+        "stateSetter": {
+            "name": "variable.state.blob-state-$1.blob",
+            "begin": "\\([[:space:]]*?\\.(.*?)!(?=[[:space:]\\)])",
+            "end": "\\)",
+            "patterns": [
+                { "include": "#all" }
+            ]
+        },
         "atom": {
-            "name": "constant.other.symbol.atom.blob",
-            "begin": ":.*?",
-            "end": "(?=[[:space:]\\(\\)])"
+            "name": "constant.other.symbol.atom.blob-atom-$1.blob",
+            "match": ":(.*?)(?=[[:space:]\\(\\)])"
         },
         "string": {
             "name": "string.quoted.double.blob",
@@ -73,19 +81,16 @@
             "match": "#(f|t)"
         },
         "input": {
-            "name": "entity.name.tag.input.$1.blob",
-            "begin": "@.*?",
-            "end": "(?=[[:space:]\\(\\)])"
+            "name": "entity.name.tag.input.blob-input-$1.blob",
+            "match": "@(.*?)(?=[[:space:]\\(\\)])"
         },
         "state": {
-            "name": "variable.state.$1.blob",
-            "begin": "\\..*?",
-            "end": "(?=[[:space:]\\(\\)])"
+            "name": "variable.state.blob-state-$1.blob",
+            "match": "\\.(.*?)(?=[[:space:]\\(\\)])"
         },
         "enum": {
-            "name": "constant.variable.enum.$1.blob",
-            "begin": "&.*?",
-            "end": "(?=[[:space:]\\(\\)])"
+            "name": "constant.variable.enum.blob-enum-$1.blob",
+            "match": "&(.*?)(?=[[:space:]\\(\\)])"
         },
         "comment": {
             "name": "comment.blob",
