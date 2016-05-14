@@ -24,7 +24,7 @@
             ]
         },
         "expression": {
-            "name": "meta.none.expression.blob",
+            "name": "meta.none.expression.blob-expression.blob",
             "begin": "\\(",
             "end": "\\)",
             "patterns": [
@@ -68,16 +68,16 @@
             "match": ":(.*?)(?=[[:space:]\\(\\)])"
         },
         "string": {
-            "name": "string.quoted.double.blob",
+            "name": "string.quoted.double.blob-string.blob",
             "begin": "\".*?",
             "end": "\""
         },
         "number": {
-            "name": "constant.numeric.decimal.blob",
+            "name": "constant.numeric.decimal.blob-number.blob",
             "match": "[+-]?\\d+\\.?\\d*?(?=[[:space:]\\(\\)])"
         },
         "bool": {
-            "name": "constant.numeric.boolean.blob",
+            "name": "constant.numeric.boolean.blob-bool.blob",
             "match": "#(f|t)"
         },
         "input": {
