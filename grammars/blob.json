@@ -33,7 +33,7 @@
         },
         "function": {
             "name": "meta.entity.name.function.blob-function-$1.blob",
-            "begin": "\\([[:space:]]*?([^.#:\"()@\\d[:space:]][^\"()[:space:]]*?(?!:))(?=[[:space:]\\)])",
+            "begin": "\\([[:space:]]*?([^.#:\"()@&\\d[:space:]][^\"()[:space:]]*?(?!:))(?=[[:space:]\\)])",
             "end": "\\)",
             "patterns": [
                 { "include": "#all" }
