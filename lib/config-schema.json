@@ -1,0 +1,10 @@
+{
+    "apiSpecs": {
+        "type": "array",
+        "description": "Include the paths to the API specs for the blob language.",
+        "default": [],
+        "items": {
+            "type": "string"
+        }
+    }
+}
