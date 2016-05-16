@@ -1,5 +1,5 @@
 {
-    "name": "blob",
+    "name": "language-blob",
     "main": "./lib/blob",
     "version": "0.0.0",
     "description": "Provides grammar and auto-completion for the blob language",
