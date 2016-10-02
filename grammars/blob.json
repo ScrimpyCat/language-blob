@@ -70,7 +70,7 @@
         "string": {
             "name": "string.quoted.double.blob-string.blob",
             "begin": "\".*?",
-            "end": "(?<!\\\\)\""
+            "end": "((?<!\\\\)|(?<=\\\\\\\\))\""
         },
         "number": {
             "name": "constant.numeric.decimal.blob-number.blob",
