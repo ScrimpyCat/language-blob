@@ -57,7 +57,7 @@
         },
         "stateSetter": {
             "name": "variable.state.blob-state-$1.blob",
-            "begin": "\\([[:space:]]*?\\.(.*?)!(?=[[:space:]\\)])",
+            "begin": "\\([[:space:]]*?\\.([^\\(\\) ]*?)!(?=[[:space:]\\)])",
             "end": "\\)",
             "patterns": [
                 { "include": "#all" }
