@@ -1,7 +1,7 @@
 {
     "name": "blob",
     "scopeName": "source.blob",
-    "fileTypes": ["asset", "blob", "font", "gamepkg", "gfxlib", "ui"],
+    "fileTypes": ["asset", "blob", "entity", "font", "gamepkg", "gfxlib", "ui"],
     "patterns": [
         { "include": "#all" }
     ],
