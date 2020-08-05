@@ -1,7 +1,7 @@
 {
   "name": "language-blob",
   "main": "./lib/blob",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Provides grammar and auto-completion for the blob language",
   "keywords": [],
   "repository": "https://github.com/ScrimpyCat/language-blob",
